@@ -1,0 +1,6 @@
+﻿  3D rendering.cpp
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\3D rendering.cpp(48,80): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\3D rendering.cpp(49,84): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\3D rendering.cpp(50,88): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\3D rendering.cpp(51,92): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  3D rendering.vcxproj -> E:\[Code]\2023 Projects\3d rendering\3D rendering\x64\Debug\3D rendering.exe
