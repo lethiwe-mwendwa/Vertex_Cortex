@@ -1,17 +1,19 @@
 #pragma once
-#include "SDL.h"
-#include <vector>
-#include <iostream>
-using namespace std;
+//using namespace std;
 
-int SCREEN_WIDTH = 1020;
-int SCREEN_HEIGHT = 720;
-bool running = true;
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
+extern bool running;
+extern int FOV;
 
 struct Point3D {
 	double x, y, z;
 };
 
+struct Point2D {
+	double x, y;
+};
+
 struct Vertex {
-	int p1, p2;
+	int point1, point2;
 };
