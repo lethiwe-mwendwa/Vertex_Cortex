@@ -25,10 +25,13 @@ int main(int argc, char* argv[])
 			}
 			if (event.type == SDL_KEYDOWN) {
 				if (event.key.keysym.sym == SDLK_RETURN) {
-
+					// Maybe add a rotate function here?
+					// H
 				}
 			}
 			if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+				drawShape(renderer, *testCube);
+				SDL_RenderPresent(renderer); // Update the screen
 			}
 		}
 

@@ -7,8 +7,8 @@ public:
 	Cube();
 
 	std::vector<Point3D> points{ 
-		Point3D{150,150,150},Point3D{150,150,-150},Point3D{-150,150,-150},Point3D{-150,150,150}, // A, B, C, D
-		Point3D{150,-150,150}, Point3D{150,-150,-150}, Point3D{-150,-150,-150}, Point3D{-150,-150,150}  // E, F, G, H
+		Point3D{150,150,15},Point3D{150,150,0.5},Point3D{-150,150,0.5},Point3D{-150,150,15}, // A, B, C, D
+		Point3D{150,-150,15}, Point3D{150,-150,0.5}, Point3D{-150,-150,0.5}, Point3D{-150,-150,15}  // E, F, G, H
 	};
 
 	std::vector<Vertex> vectices{
