@@ -2,6 +2,7 @@
 #include "Cube.h"
 #include "Vertex.h"
 #include "Constants.h"
+#include <iostream>
 int main(int argc, char* argv[])
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -16,7 +17,6 @@ int main(int argc, char* argv[])
 	drawShape(renderer,*testCube);
 	SDL_RenderPresent(renderer); // Update the screen
 
-
 	while (running) {
 		while (SDL_PollEvent(&event)) {
 			if (event.type == SDL_QUIT) {
@@ -24,14 +24,21 @@ int main(int argc, char* argv[])
 				SDL_Quit();
 			}
 			if (event.type == SDL_KEYDOWN) {
-				if (event.key.keysym.sym == SDLK_RETURN) {
-					// Maybe add a rotate function here?
-					// H
+				std::cout << event.key.keysym.sym << std::endl;
+				if (event.key.keysym.sym == 1073741906) {
+					// Up arrow, rotate up
+					rotateShape(200,*testCube);
+					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+					SDL_RenderClear(renderer);
+					drawShape(renderer, *testCube);
+					SDL_RenderPresent(renderer);
 				}
 			}
 			if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				SDL_RenderClear(renderer);
 				drawShape(renderer, *testCube);
-				SDL_RenderPresent(renderer); // Update the screen
+				SDL_RenderPresent(renderer);
 			}
 		}
 
