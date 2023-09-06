@@ -26,21 +26,47 @@ void drawShape(SDL_Renderer* renderer, Cube shape)
 	}
 };
 
-void rotateShape(int theta, Cube &shape) {
+void rotateShapeX(int theta, Cube &shape) {
 	theta = theta * (M_PI / 180.0);
 	double transMatrix[3][3] = {
 		{1,0,0},
 		{0,cos(theta),-sin(theta)},
 		{0,sin(theta),cos(theta)}
 	};
-	
+	applyMatrix(transMatrix, shape);
+
+}
+
+void rotateShapeY(int theta, Cube& shape) {
+	theta = theta * (M_PI / 180.0);
+	double transMatrix[3][3] = {
+		{cos(theta),0,sin(theta)},
+		{0,1,0},
+		{-sin(theta),0,cos(theta)}
+	};
+	applyMatrix(transMatrix, shape);
+
+}
+
+void rotateShapeZ(int theta, Cube& shape) {
+	theta = theta * (M_PI / 180.0);
+	double transMatrix[3][3] = {
+		{cos(theta),-sin(theta),0},
+		{sin(theta),cos(theta),0},
+		{0,0,1}
+	};
+	applyMatrix(transMatrix, shape);
+
+}
+
+
+void applyMatrix(double transMatrix[3][3], Cube& shape) {
 	for (int i = 0; i < 8; i++) {
 		Point3D currentPoint = shape.points[i];
 		shape.points[i].x = (transMatrix[0][0] * currentPoint.x) + (transMatrix[0][1] * currentPoint.y) + (transMatrix[0][2] * currentPoint.z);
 		shape.points[i].y = (transMatrix[1][0] * currentPoint.x) + (transMatrix[1][1] * currentPoint.y) + (transMatrix[1][2] * currentPoint.z);
 		shape.points[i].z = (transMatrix[2][0] * currentPoint.x) + (transMatrix[2][1] * currentPoint.y) + (transMatrix[2][2] * currentPoint.z);
 	}
-
 }
 
 

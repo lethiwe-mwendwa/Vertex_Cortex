@@ -27,7 +27,31 @@ int main(int argc, char* argv[])
 				std::cout << event.key.keysym.sym << std::endl;
 				if (event.key.keysym.sym == 1073741906) {
 					// Up arrow, rotate up
-					rotateShape(200,*testCube);
+					rotateShapeX(200,*testCube);
+					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+					SDL_RenderClear(renderer);
+					drawShape(renderer, *testCube);
+					SDL_RenderPresent(renderer);
+				}
+				if (event.key.keysym.sym == 1073741905) {
+					// Down arrow, rotate down
+					rotateShapeX(-200, *testCube);
+					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+					SDL_RenderClear(renderer);
+					drawShape(renderer, *testCube);
+					SDL_RenderPresent(renderer);
+				}
+				if (event.key.keysym.sym == 1073741904) {
+					// left arrow, rotate left
+					rotateShapeY(200, *testCube);
+					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+					SDL_RenderClear(renderer);
+					drawShape(renderer, *testCube);
+					SDL_RenderPresent(renderer);
+				}
+				if (event.key.keysym.sym == 1073741903) {
+					// left arrow, rotate left
+					rotateShapeY(-200, *testCube);
 					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 					SDL_RenderClear(renderer);
 					drawShape(renderer, *testCube);
@@ -43,7 +67,7 @@ int main(int argc, char* argv[])
 		}
 
 	}
-
+	SDL_Delay(500);
 	SDL_Quit();
 	return 0;
 	
