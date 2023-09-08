@@ -26,8 +26,8 @@ void drawShape(SDL_Renderer* renderer, Cube shape)
 	}
 };
 
-void rotateShapeX(int theta, Cube &shape) {
-	theta = theta * (M_PI / 180.0);
+void rotateShapeX(double theta, Cube &shape) {
+	//theta = theta * (M_PI / 180.0);
 	double transMatrix[3][3] = {
 		{1,0,0},
 		{0,cos(theta),-sin(theta)},
@@ -37,8 +37,8 @@ void rotateShapeX(int theta, Cube &shape) {
 
 }
 
-void rotateShapeY(int theta, Cube& shape) {
-	theta = theta * (M_PI / 180.0);
+void rotateShapeY(double theta, Cube& shape) {
+	//theta = theta * (M_PI / 180.0);
 	double transMatrix[3][3] = {
 		{cos(theta),0,sin(theta)},
 		{0,1,0},
@@ -48,8 +48,8 @@ void rotateShapeY(int theta, Cube& shape) {
 
 }
 
-void rotateShapeZ(int theta, Cube& shape) {
-	theta = theta * (M_PI / 180.0);
+void rotateShapeZ(double theta, Cube& shape) {
+	//theta = theta * (M_PI / 180.0);
 	double transMatrix[3][3] = {
 		{cos(theta),-sin(theta),0},
 		{sin(theta),cos(theta),0},
@@ -71,10 +71,6 @@ void applyMatrix(double transMatrix[3][3], Cube& shape) {
 
 
 /*
-* 
-Hey, if you want me to tell tom to call you and ask for some homework or something "important" that would
-need you to use your phone, I can do.
-* 
 Point2D screenPoint1{
 			((point1.x*FOV) / (point1.z+FOV)) + SCREEN_WIDTH/2,
 			((point1.y * FOV) / (point1.z + FOV)) + SCREEN_HEIGHT/2
