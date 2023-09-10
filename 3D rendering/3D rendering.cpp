@@ -1,8 +1,11 @@
 #include "SDL.h"
-#include "Cube.h"
-#include "Vertex.h"
-#include "Constants.h"
 #include <iostream>
+#include "TriangularP.h"
+#include "Vertex.h"
+#include "Cube.h"
+#include "Entities.h"
+
+
 int main(int argc, char* argv[])
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -13,8 +16,11 @@ int main(int argc, char* argv[])
 	SDL_Event event;
 
 	Cube* testCube = new Cube();
+	TriangularP* testTri = new TriangularP();
 
-	drawShape(renderer,*testCube);
+	renderEntities(renderer);
+	drawShape(renderer, *testCube);
+
 	SDL_RenderPresent(renderer); // Update the screen
 
 	while (running) {
@@ -28,50 +34,62 @@ int main(int argc, char* argv[])
 				if (event.key.keysym.sym == 1073741906) {
 					// Up arrow, rotate up
 					rotateShapeX(0.05,*testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeX(0.05, *testTri);
+					renderEntities(renderer);
 				}
 				if (event.key.keysym.sym == 1073741905) {
 					// Down arrow, rotate down
 					rotateShapeX(-0.05, *testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeX(-0.05, *testTri);
+					renderEntities(renderer);
 				}
 				if (event.key.keysym.sym == 1073741904) {
 					// left arrow, rotate left
 					rotateShapeY(0.05, *testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeY(0.05, *testTri);
+					renderEntities(renderer);
 				}
 				if (event.key.keysym.sym == 1073741903) {
 					// left arrow, rotate left
 					rotateShapeY(-0.05, *testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeY(-0.05, *testTri);
+					renderEntities(renderer);
 				}
 				if (event.key.keysym.sym == 1073741913) {
 					// left Z, rotate left
 					rotateShapeZ(-0.05, *testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeZ(-0.05, *testTri);
+					renderEntities(renderer);
 				}
 				if (event.key.keysym.sym == 1073741915) {
 					// right Z, rotate right
 					rotateShapeZ(0.05, *testCube);
-					SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-					SDL_RenderClear(renderer);
-					drawShape(renderer, *testCube);
-					SDL_RenderPresent(renderer);
+					rotateShapeZ(0.05, *testTri);
+					renderEntities(renderer);
+				}
+				if (event.key.keysym.sym == 97) {
+					// right Z, rotate right
+					moveShapeX(10, *testCube);
+					moveShapeX(10, *testTri);
+					renderEntities(renderer);
+				} 
+				if (event.key.keysym.sym == 119) {
+					// right Z, rotate right
+					moveShapeY(-10, *testCube);
+					moveShapeY(-10, *testTri);
+					renderEntities(renderer);
+				}
+				if (event.key.keysym.sym == 115) {
+					// right Z, rotate right
+					moveShapeY(10, *testCube);
+					moveShapeY(10, *testTri);
+					renderEntities(renderer);
+				}
+				if (event.key.keysym.sym == 100) {
+					// right Z, rotate right
+					moveShapeX(-10, *testCube);
+					moveShapeX(-10, *testTri);
+					renderEntities(renderer);
 				}
 			}
 			if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {

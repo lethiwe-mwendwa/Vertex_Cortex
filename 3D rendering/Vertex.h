@@ -1,10 +1,12 @@
 #pragma once
 #include "SDL.h"
-#include "Cube.h"
+#include "Shape.h"
 
-
-void drawShape(SDL_Renderer* renderer, Cube shape);
-void rotateShapeX(double theta, Cube &shape);
-void rotateShapeY(double theta, Cube& shape);
-void rotateShapeZ(double theta, Cube& shape);
-void applyMatrix(double transMatrix[3][3], Cube& shape);
+void moveShapeX(double x, Shape& shape);
+void moveShapeY(double x, Shape& shape);
+void moveShapeY(double x, Shape& shape);
+void drawShape(SDL_Renderer* renderer, Shape shape);
+void rotateShapeX(double theta, Shape&shape);
+void rotateShapeY(double theta, Shape& shape);
+void rotateShapeZ(double theta, Shape& shape);
+void applyMatrix(double transMatrix[3][3], Shape& shape);

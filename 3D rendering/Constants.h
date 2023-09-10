@@ -1,6 +1,7 @@
 #pragma once
 //using namespace std;
 
+
 extern int SCREEN_WIDTH;
 extern int SCREEN_HEIGHT;
 extern bool running;
