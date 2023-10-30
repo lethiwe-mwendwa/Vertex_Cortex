@@ -1,2 +1,13 @@
 ﻿  3D rendering.cpp
+  Cube.cpp
+  Entities.cpp
+  Shape.cpp
+  Teapot.cpp
+  TriangularP.cpp
+  Vertex.cpp
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\Vertex.cpp(22,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\Vertex.cpp(22,16): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\Vertex.cpp(21,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+E:\[Code]\2023 Projects\3d rendering\3D rendering\3D rendering\Vertex.cpp(21,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
   3D rendering.vcxproj -> E:\[Code]\2023 Projects\3d rendering\3D rendering\x64\Debug\3D rendering.exe

@@ -135,6 +135,7 @@
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Teapot.cpp" />
     <ClCompile Include="TriangularP.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Entities.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="Teapot.h" />
     <ClInclude Include="TriangularP.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>

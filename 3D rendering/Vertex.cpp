@@ -3,6 +3,7 @@
 void drawShape(SDL_Renderer* renderer, Shape shape)
 {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	// if I dont change to arrays, maybe optimise?? beep beep
 	for (int i = 0; i < shape.vecticesNum; i++) {
 		Vertex currentVertex = shape.vectices[i];
 		Point3D point1 = shape.points[currentVertex.point1];
@@ -16,8 +17,6 @@ void drawShape(SDL_Renderer* renderer, Shape shape)
 			((point2.x * FOV) / (point2.z + FOV)) + SCREEN_WIDTH / 2,
 			((-point2.y * FOV) / (point2.z + FOV)) + SCREEN_HEIGHT / 2
 		};
-		
-
 		SDL_RenderDrawLine(
 			renderer, screenPoint1.x, screenPoint1.y,
 			screenPoint2.x, screenPoint2.y
@@ -49,7 +48,12 @@ void rotateShapeY(double theta, Shape& shape) {
 }
 
 void rotateShapeZ(double theta, Shape& shape) {
-	return;
+	double transMatrix[3][3] = {
+		{cos(theta),-sin(theta),0},
+		{0,1,0},
+		{-sin(theta),0,cos(theta)}
+	};
+	applyMatrix(transMatrix, shape);
 }
 
 void moveShapeX(double x, Shape& shape) {
@@ -70,6 +74,29 @@ void moveShapeY(double y, Shape& shape) {
 		shape.points[i].y = currentPoint.y + y;
 	}
 }
+
+void reflectShapeYZ(double theta, Shape& shape) {
+	//theta = theta * (M_PI / 180.0);
+	double transMatrix[3][3] = {
+		{-1,0,0},
+		{0,1,0},
+		{0,0,-1}
+	};
+	applyMatrix(transMatrix, shape);
+
+}
+
+void reflectShapeXZ(double theta, Shape& shape) {
+	//theta = theta * (M_PI / 180.0);
+	double transMatrix[3][3] = {
+		{1,0,0},
+		{0,-1,0},
+		{0,0,1}
+	};
+	applyMatrix(transMatrix, shape);
+
+}
+
 
 void applyMatrix(double transMatrix[3][3], Shape& shape) {
 	for (int i = 0; i < shape.pointNum; i++) {
