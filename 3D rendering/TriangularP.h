@@ -1,6 +1,5 @@
 #pragma once
 #include "Shape.h"
-#include "Entities.h"
 
 class TriangularP : public Shape
 {

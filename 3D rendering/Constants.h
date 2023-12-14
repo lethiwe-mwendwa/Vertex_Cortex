@@ -1,6 +1,5 @@
 #pragma once
-//using namespace std;
-
+#include <vector>
 
 extern int SCREEN_WIDTH;
 extern int SCREEN_HEIGHT;

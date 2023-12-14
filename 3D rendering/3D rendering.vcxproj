@@ -134,19 +134,23 @@
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Entities.cpp" />
+    <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="Teapot.cpp" />
+    <ClCompile Include="TetiMath.cpp" />
     <ClCompile Include="TriangularP.cpp" />
-    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Entities.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Shape.h" />
-    <ClInclude Include="Teapot.h" />
+    <ClInclude Include="TetiMath.h" />
     <ClInclude Include="TriangularP.h" />
-    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
-#include "Vertex.h"
 #include "Entities.h"
-#include <iostream>
+#include "Constants.h"
+#include <SDL.h>
 
 std::vector<Shape*> Entities;
 
@@ -8,11 +8,13 @@ void renderEntities(SDL_Renderer* renderer) {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 	for (int i = 0; i < Entities.size(); i++){
-		drawShape(renderer, *Entities[i]);
+		Entities[i]->drawShape(renderer);
 	}
 	SDL_RenderPresent(renderer);
 }
 
+// whats the point of this??
+/*
 void transformEntities(SDL_Renderer* renderer, char axis, int value)
 {
 	switch (axis) {
@@ -34,3 +36,4 @@ void transformEntities(SDL_Renderer* renderer, char axis, int value)
 	renderEntities(renderer);
 
 }
+*/
